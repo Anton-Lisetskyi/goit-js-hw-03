@@ -1,10 +1,9 @@
 const makeArray = function (...elements) {
+    let maxLength = elements[elements.length - 1];
 
-    let result = [].concat(...elements);
+    let result = [].concat(...elements.slice(0, -1));
 
-    let lastElement = result.pop();
-
-    return result.slice(0, lastElement);
+    return result.slice(0, maxLength);
 }
 
 console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
